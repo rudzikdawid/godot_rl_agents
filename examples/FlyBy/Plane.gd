@@ -75,22 +75,11 @@ func get_obs():
 	var goal_distance = goal_vector.length()
 	goal_vector = goal_vector.normalized()
 	goal_distance = clamp(goal_distance, 0.0, 50.0)
-	
-	var next_goal = environment.get_next_goal(cur_goal)
-	var next_goal_vector = to_local(next_goal.position)
-	var next_goal_distance = next_goal_vector.length()
-	next_goal_vector = next_goal_vector.normalized()
-	next_goal_distance = clamp(next_goal_distance, 0.0, 50.0)  
 
 	var obs = [
 		goal_vector.x,
 		goal_vector.y,
 		goal_vector.z,
-		goal_distance / 50.0 ,
-		next_goal_vector.x,
-		next_goal_vector.y,
-		next_goal_vector.z,
-		next_goal_distance / 50.0
 	]
 	
 	return {"obs":obs}
