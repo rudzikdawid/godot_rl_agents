@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="1"]
 [ext_resource type="Script" path="res://GameArea.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://t6dny8qa4t0s" path="res://alps_field_2k.hdr" id="2_retnu"]
+[ext_resource type="Texture2D" uid="uid://d3livmkrvact4" path="res://alps_field_2k.hdr" id="2_retnu"]
 [ext_resource type="PackedScene" path="res://Goal.tscn" id="3"]
 [ext_resource type="Script" path="res://FlyBy.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://3xxv82w5v8bo" path="res://Plane.tscn" id="5"]
-[ext_resource type="Texture2D" uid="uid://bllectxwni4aa" path="res://concrete_wall_004_diff_1k.jpg" id="7_mnp35"]
-[ext_resource type="Texture2D" uid="uid://dldtb41hye81g" path="res://concrete_wall_004_ao_1k.jpg" id="8_mhe64"]
-[ext_resource type="Texture2D" uid="uid://5a5t67qitvfe" path="res://concrete_wall_004_arm_1k.jpg" id="9_1x60u"]
-[ext_resource type="Texture2D" uid="uid://c5i52p54pfjkb" path="res://concrete_wall_004_nor_gl_1k.jpg" id="10_x6htc"]
+[ext_resource type="Texture2D" uid="uid://uo4fawhv63os" path="res://concrete_wall_004_diff_1k.jpg" id="7_mnp35"]
+[ext_resource type="Texture2D" uid="uid://bvu6me4fscvi5" path="res://concrete_wall_004_ao_1k.jpg" id="8_mhe64"]
+[ext_resource type="Texture2D" uid="uid://dv4uqrj536yvq" path="res://concrete_wall_004_arm_1k.jpg" id="9_1x60u"]
+[ext_resource type="Texture2D" uid="uid://c5018srpe07ee" path="res://concrete_wall_004_nor_gl_1k.jpg" id="10_x6htc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_88xh0"]
 panorama = ExtResource("2_retnu")
@@ -278,19 +278,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 27, -1)
 [node name="Walls" type="Node" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -24.1131, 252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 42.4434, 252)
 mesh = SubResource("5")
 
 [node name="MeshInstance2" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -24.1131, -251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 42.4434, -251)
 mesh = SubResource("5")
 
 [node name="MeshInstance3" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -215, -24.1131, 1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -215, 42.4434, 1)
 mesh = SubResource("5")
 
 [node name="MeshInstance4" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 285, -24.1131, -2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 285, 42.4434, -2)
 mesh = SubResource("5")
 
 [connection signal="body_exited" from="GameArea" to="GameArea" method="_on_GameArea_body_exited"]
