@@ -112,7 +112,7 @@ func get_obs_space():
 		"obs": {
 			"size": [len(get_obs()["obs"])],
 			"space": "box"
-	}
+		}
 	}   
 func get_action_space():
 	return {
@@ -121,7 +121,7 @@ func get_action_space():
 			"action_type": "continuous"
 		},        
 		"pitch" : {
-		"size": 1,
+			"size": 1,
 			"action_type": "continuous"
 		}
 	}
