@@ -82,7 +82,7 @@ func get_obs():
 		goal_vector.z,
 	]
 	
-	return {"obs":obs}
+	return { "obs": obs }
 
 
 func update_reward():
