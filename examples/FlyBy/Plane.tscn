@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3xxv82w5v8bo"]
+[gd_scene load_steps=6 format=3 uid="uid://3xxv82w5v8bo"]
 
 [ext_resource type="Script" path="res://Plane.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b3mn8xa1fj3r5" path="res://cartoon_plane/scene.gltf" id="2_0hy0d"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sensors/sensors_3d/RaycastSensor3D.gd" id="4_m1mym"]
 
 [sub_resource type="CylinderShape3D" id="27"]
 height = 8.00117
@@ -29,3 +30,111 @@ transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.4392)
+
+[node name="FrontRCS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 3.72303)
+script = ExtResource("4_m1mym")
+collision_mask = 2
+boolean_class_mask = 0
+n_rays_width = 4.0
+n_rays_height = 4.0
+ray_length = 20.0
+cone_width = 90.0
+cone_height = 90.0
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="@RayCast3D@18017" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-9.2388, -11.1114, 13.8268)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_0 1" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-10.8979, -3.90181, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_0 2" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-10.8979, 3.90181, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_0 3" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-9.2388, 11.1114, 13.8268)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_1 0" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-3.24423, -11.1114, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_1 1" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-3.82683, -3.90181, 19.2388)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_1 2" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-3.82683, 3.90181, 19.2388)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_1 3" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(-3.24423, 11.1114, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_2 0" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(3.24423, -11.1114, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_2 1" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(3.82683, -3.90181, 19.2388)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_2 2" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(3.82683, 3.90181, 19.2388)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_2 3" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(3.24423, 11.1114, 16.3099)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="node_3 3" type="RayCast3D" parent="FrontRCS"]
+target_position = Vector3(9.2388, 11.1114, 13.8268)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TestRCS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.0220184, -0.445163, -3.7872)
+script = ExtResource("4_m1mym")
+collision_mask = 2
+boolean_class_mask = 0
+n_rays_width = 1.0
+n_rays_height = 1.0
+ray_length = 30.0
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="@RayCast3D@18021" type="RayCast3D" parent="TestRCS"]
+target_position = Vector3(0, 0, 30)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

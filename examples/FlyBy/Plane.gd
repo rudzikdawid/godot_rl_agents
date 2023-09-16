@@ -34,6 +34,8 @@ var n_steps = 0
 const MAX_STEPS = 200000
 var needs_reset = false
 var reward = 0.0
+var distance_threshold = 0.6
+var distance_panalty = 4
 
 
 func _ready():
@@ -80,10 +82,12 @@ func get_obs():
 		goal_vector.x,
 		goal_vector.y,
 		goal_vector.z,
-	]
+	] + getRCS()
 	
 	return { "obs": obs }
 
+func getRCS():
+	return [] + $FrontRCS.get_observation()
 
 func update_reward():
 	reward -= 0.01 # step penalty
@@ -98,6 +102,10 @@ func shaping_reward():
 	if goal_distance < best_goal_distance:
 		s_reward += best_goal_distance - goal_distance
 		best_goal_distance = goal_distance
+	
+	for sensor_value in getRCS():
+		if sensor_value > distance_threshold:
+			s_reward -= (distance_panalty * (sensor_value / distance_threshold))
 		
 	s_reward /= 1.0
 	return s_reward 
@@ -131,6 +139,9 @@ func set_action(action):
 	pitch_input = action["pitch"][0]
 
 func _physics_process(delta):
+	#if self.name == 'Plane':
+	#	printerr($TestRCS.get_observation())
+	
 	n_steps +=1    
 	if n_steps >= MAX_STEPS:
 		done = true
@@ -182,4 +193,4 @@ func exited_game_area():
 	done = true
 	reward -= 10.0
 	exited_arena = true
-	reset()
+	self.reset()
