@@ -87,7 +87,7 @@ func get_obs():
 	return { "obs": obs }
 
 func getRCS():
-	return [] + $FrontRCS.get_observation()
+	return [] + $FrontRCS.get_observation() + $LeftWingRCS.get_observation() + $RightWingRCS.get_observation()
 
 func update_reward():
 	reward -= 0.01 # step penalty
