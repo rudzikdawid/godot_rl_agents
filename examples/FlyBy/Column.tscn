@@ -4,11 +4,11 @@
 albedo_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6mm0"]
-size = Vector3(10.0023, 99.9972, 10.0116)
+size = Vector3(10.0023, 99.9972, 52)
 
 [node name="CSGBox2" type="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 25, -81)
-size = Vector3(10, 100, 10)
+size = Vector3(10, 100, 52)
 material = SubResource("StandardMaterial3D_ku1r5")
 
 [node name="Area3D" type="Area3D" parent="."]

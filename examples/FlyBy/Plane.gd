@@ -43,6 +43,7 @@ func _ready():
 	pass
 	
 func reset():
+	resetTimer()
 	needs_reset = false
 	
 	cur_goal = environment.get_next_goal(null)
@@ -106,7 +107,9 @@ func shaping_reward():
 	for sensor_value in getRCS():
 		if sensor_value > distance_threshold:
 			s_reward -= (distance_panalty * (sensor_value / distance_threshold))
-		
+		if sensor_value == 1:
+			s_reward - 200
+	
 	s_reward /= 1.0
 	return s_reward 
 
@@ -185,12 +188,21 @@ func set_input():
 
 
 func goal_reached(goal):
+	resetTimer()
 	if goal == cur_goal:
-		reward += 100.0
+		reward += 1000.0
 		cur_goal = environment.get_next_goal(cur_goal)
+
+func resetTimer():
+	$Timer.stop()
+	$Timer.start()
+
+func _on_timer_timeout():
+	reward -= 600
+	self.reset()
 	
 func exited_game_area():
 	done = true
-	reward -= 10.0
+	reward -= 200.0
 	exited_arena = true
 	self.reset()
