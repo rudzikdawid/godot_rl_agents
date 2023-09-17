@@ -109,6 +109,7 @@ func shaping_reward():
 			s_reward -= (distance_panalty * (sensor_value / distance_threshold))
 		if sensor_value == 1:
 			s_reward - 200
+			self.reset()
 	
 	s_reward /= 1.0
 	return s_reward 
@@ -203,6 +204,6 @@ func _on_timer_timeout():
 	
 func exited_game_area():
 	done = true
-	reward -= 200.0
+	reward -= 600.0
 	exited_arena = true
 	self.reset()
