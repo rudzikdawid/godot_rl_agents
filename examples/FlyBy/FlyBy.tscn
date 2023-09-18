@@ -149,19 +149,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.8114, 39.4487, 160.279)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.9287, 39.4487, 172.72)
 
 [node name="CSGBox36" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.33, 39.4487, 129.177)
+transform = Transform3D(0.946503, 0, -0.322695, 0, 1, 0, 0.322695, 0, 0.946503, -145.33, 39.4487, 129.177)
 
 [node name="CSGBox37" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.837, 39.4487, 69.6162)
+transform = Transform3D(0.784636, 0, 0.619957, 0, 1, 0, -0.619957, 0, 0.784636, -132.837, 39.4487, 58.7602)
 
 [node name="CSGBox38" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3423, 39.4487, -16.7446)
+transform = Transform3D(0.14332, 0, -0.989676, 0, 1, 0, 0.989676, 0, 0.14332, -58.3837, 39.4487, -25.1476)
 
 [node name="CSGBox40" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8936, 39.4487, -42.7262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.93, 39.4487, -42.7262)
 
 [node name="CSGBox43" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8936, 39.4487, 34.9061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4307, 39.4487, 34.9061)
 
 [node name="CSGBox44" parent="Columns" instance=ExtResource("4_0pxpr")]
 transform = Transform3D(0.232783, 0, 0.972529, 0, 1, 0, -0.972529, 0, 0.232783, 3.63102, 39.4487, 63.8723)
@@ -170,7 +170,7 @@ transform = Transform3D(0.232783, 0, 0.972529, 0, 1, 0, -0.972529, 0, 0.232783, 
 transform = Transform3D(-0.580774, 0, 0.814065, 0, 1, 0, -0.814065, 0, -0.580774, 33.3708, 39.4487, 54.3202)
 
 [node name="CSGBox48" parent="Columns" instance=ExtResource("4_0pxpr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6174, 39.4487, -36.4267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5896, 39.4487, -36.4267)
 
 [node name="CSGBox49" parent="Columns" instance=ExtResource("4_0pxpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2164, 39.4487, 18.3716)
@@ -186,6 +186,9 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 27.389
 
 [node name="CSGBox50" parent="Columns" instance=ExtResource("4_0pxpr")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 27.3896, 12.3594, 44.734)
+
+[node name="CSGBox56" parent="Columns" instance=ExtResource("4_0pxpr")]
+transform = Transform3D(-2.1551e-09, -0.049303, 0.998784, 1, -4.37114e-08, 0, 4.36582e-08, 0.998784, 0.049303, -52.0801, 12.3594, -4.46661)
 
 [node name="CSGBox46" parent="Columns" instance=ExtResource("4_0pxpr")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 27.3896, 11.8562, -62.3616)

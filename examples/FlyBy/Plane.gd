@@ -48,7 +48,7 @@ func reset():
 	
 	cur_goal = environment.get_next_goal(null)
 	transform_backup = transform_backup
-	position.x = 0 + randf_range(-2,2)
+	position.x = 20 + randf_range(-2,2)
 	position.y = 27 + randf_range(-2,2)
 	position.z = 0 + randf_range(-2,2)
 	velocity = Vector3.ZERO
@@ -108,7 +108,7 @@ func shaping_reward():
 		if sensor_value > distance_threshold:
 			s_reward -= (distance_panalty * (sensor_value / distance_threshold))
 		if sensor_value == 1:
-			s_reward - 200
+			s_reward -= 200
 			self.reset()
 	
 	s_reward /= 1.0
