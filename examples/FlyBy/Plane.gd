@@ -199,11 +199,11 @@ func resetTimer():
 	$Timer.start()
 
 func _on_timer_timeout():
-	reward -= 600
+	reward -= 2000
 	self.reset()
 	
 func exited_game_area():
 	done = true
-	reward -= 600.0
+	reward -= 2000.0
 	exited_arena = true
 	self.reset()
