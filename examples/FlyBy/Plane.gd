@@ -96,7 +96,7 @@ func update_reward():
 
 func get_reward():
 	return reward
-	
+
 func shaping_reward():
 	var s_reward = 0.0
 	var goal_distance = to_local(cur_goal.position).length()
@@ -111,13 +111,21 @@ func shaping_reward():
 			s_reward -= 200
 			self.reset()
 	
+	if in_range(turn_input, -0.2, 0.2):
+		s_reward += (0.8 - abs(turn_input))
+	
+	if in_range(pitch_input, -0.2, 0.2):
+		s_reward += (0.8 - abs(pitch_input))
+	
 	s_reward /= 1.0
 	return s_reward 
+
+func in_range(value: float, min: float, max: float):
+	return value >= min and value <= max
 
 func set_heuristic(heuristic):
 	self._heuristic = heuristic
 
-	
 func get_obs_space():
 	# typs of obs space: box, discrete, repeated
 	return {
@@ -125,7 +133,8 @@ func get_obs_space():
 			"size": [len(get_obs()["obs"])],
 			"space": "box"
 		}
-	}   
+	}
+
 func get_action_space():
 	return {
 		"turn" : {
