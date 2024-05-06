@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://2egfcbd0y20q"]
+
+[ext_resource type="Script" path="res://RigidBullet.gd" id="1_arrhj"]
+[ext_resource type="PackedScene" uid="uid://d2ll038lw7hvt" path="res://Column.tscn" id="2_x5275"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ow3is"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcduy"]
+size = Vector3(10.0825, 20.0342, 10.436)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0koci"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="RigidBullet" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_ow3is")
+script = ExtResource("1_arrhj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256042, -0.0189514, 0.0168152)
+shape = SubResource("BoxShape3D_jcduy")
+
+[node name="CSGBox2" parent="." instance=ExtResource("2_x5275")]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+material = SubResource("StandardMaterial3D_0koci")

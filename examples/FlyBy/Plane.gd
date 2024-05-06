@@ -26,6 +26,7 @@ var cur_goal = null
 # ------- #
 var turn_input = 0
 var pitch_input = 0
+var shoot_input = 0
 var done = false
 var _heuristic = "human"
 var best_goal_distance := 10000.0
@@ -90,6 +91,10 @@ func get_obs():
 func getRCS():
 	return [] + $FrontRCS.get_observation() + $LeftWingRCS.get_observation() + $RightWingRCS.get_observation()
 
+func getCamera():
+	print($SubViewport.get_texture().get_image())
+	return []
+
 func update_reward():
 	reward -= 0.01 # step penalty
 	reward += shaping_reward()
@@ -111,11 +116,11 @@ func shaping_reward():
 			s_reward -= 200
 			self.reset()
 	
-	if in_range(turn_input, -0.2, 0.2):
-		s_reward += (0.8 - abs(turn_input))
+	if in_range(turn_input, -0.4, 0.4):
+		s_reward += (1 - abs(turn_input))
 	
-	if in_range(pitch_input, -0.2, 0.2):
-		s_reward += (0.8 - abs(pitch_input))
+	if in_range(pitch_input, -0.4, 0.4):
+		s_reward += (1 - abs(pitch_input))
 	
 	s_reward /= 1.0
 	return s_reward 
@@ -144,12 +149,17 @@ func get_action_space():
 		"pitch" : {
 			"size": 1,
 			"action_type": "continuous"
+		},
+		"shoot": {
+			"size": 1,
+			"action_type": "discrete"
 		}
 	}
 
 func set_action(action):
 	turn_input = action["turn"][0]
 	pitch_input = action["pitch"][0]
+	shoot_input = action["shoot"][0]
 
 func _physics_process(delta):
 	#if self.name == 'Plane':
@@ -168,6 +178,14 @@ func _physics_process(delta):
 	if cur_goal == null:
 		reset()
 	set_input()
+	if Input.is_action_just_pressed("shoot"):
+		environment.rewspawn_bullet(self)
+		print('shoot key pressed! need read plane position and pass to rewspanw bullet')
+		#var bullet_instance = preload("res://Bullet.tscn").instantiate()
+		#bullet_instance.position = $".".global_position
+		#bullet_instance.direction = $".".global_direction
+		#add_child(bullet_instance)
+	
 	if Input.is_action_just_pressed("r_key"):
 		reset()
 	# Rotate the transform based checked the input values
@@ -195,6 +213,7 @@ func set_input():
 	else:
 		turn_input = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right")
 		pitch_input = Input.get_action_strength("pitch_up") - Input.get_action_strength("pitch_down")
+		shoot_input = Input.get_action_strength("shoot")
 
 
 func goal_reached(goal):
@@ -202,6 +221,9 @@ func goal_reached(goal):
 	if goal == cur_goal:
 		reward += 1000.0
 		cur_goal = environment.get_next_goal(cur_goal)
+
+func bullet_acheved_target():
+	print('bullet_acheved_target')
 
 func resetTimer():
 	$Timer.stop()

@@ -26,6 +26,15 @@ func get_last_goal():
 	return goals[-1]
 			
 
+func rewspawn_bullet(plane):
+	var bullet_instance = preload("res://RigidBullet.tscn").instantiate()
+	bullet_instance.position = plane.global_position
+	bullet_instance.rotation = plane.rotation
+	bullet_instance.scale = Vector3(0.05, 0.05, 0.05)
+	bullet_instance.linear_velocity = plane.basis.z * -300
+
+	add_child(bullet_instance)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

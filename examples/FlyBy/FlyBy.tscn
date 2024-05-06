@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://duev7xgoc7kvq"]
+[gd_scene load_steps=21 format=3 uid="uid://duev7xgoc7kvq"]
 
 [ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="1"]
 [ext_resource type="Script" path="res://GameArea.gd" id="2"]
@@ -50,6 +50,8 @@ uv1_scale = Vector3(10, 10, 10)
 [sub_resource type="BoxMesh" id="5"]
 material = SubResource("StandardMaterial3D_lnswx")
 size = Vector3(500, 100, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5lq5v"]
 
 [node name="FlyBy" type="Node3D"]
 script = ExtResource("4")
@@ -301,5 +303,13 @@ mesh = SubResource("5")
 [node name="MeshInstance4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 285, 42.4434, -2)
 mesh = SubResource("5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(411.076, 150.419)
+scale = Vector2(5.75134, 0.563517)
+texture = SubResource("ViewportTexture_5lq5v")
+region_enabled = true
+region_rect = Rect2(1442, 525, 73, 467)
 
 [connection signal="body_exited" from="GameArea" to="GameArea" method="_on_GameArea_body_exited"]

@@ -28,9 +28,6 @@ shape = SubResource("BoxShape3D_b0qqi")
 [node name="PlaneModel" parent="." instance=ExtResource("2_0hy0d")]
 transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.4392)
-
 [node name="TestRCS" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.0220184, -0.445163, -3.7872)
 script = ExtResource("4_m1mym")
@@ -39,12 +36,6 @@ boolean_class_mask = 0
 n_rays_width = 1.0
 n_rays_height = 1.0
 ray_length = 30.0
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="@RayCast3D@18025" type="RayCast3D" parent="TestRCS"]
-target_position = Vector3(0, 0, 30)
-collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
@@ -61,97 +52,91 @@ cone_height = 90.0
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18026" type="RayCast3D" parent="FrontRCS"]
-target_position = Vector3(-13.8582, -16.6671, 20.7403)
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="@RayCast3D@18027" type="RayCast3D" parent="FrontRCS"]
+[node name="node_0 1" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-16.3469, -5.85271, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18028" type="RayCast3D" parent="FrontRCS"]
+[node name="node_0 2" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-16.3469, 5.85271, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18029" type="RayCast3D" parent="FrontRCS"]
+[node name="node_0 3" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-13.8582, 16.6671, 20.7403)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18030" type="RayCast3D" parent="FrontRCS"]
+[node name="node_1 0" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-4.86635, -16.6671, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18031" type="RayCast3D" parent="FrontRCS"]
+[node name="node_1 1" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-5.74025, -5.85271, 28.8582)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18032" type="RayCast3D" parent="FrontRCS"]
+[node name="node_1 2" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-5.74025, 5.85271, 28.8582)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18033" type="RayCast3D" parent="FrontRCS"]
+[node name="node_1 3" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(-4.86635, 16.6671, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18034" type="RayCast3D" parent="FrontRCS"]
+[node name="node_2 0" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(4.86635, -16.6671, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18035" type="RayCast3D" parent="FrontRCS"]
+[node name="node_2 1" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(5.74025, -5.85271, 28.8582)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18036" type="RayCast3D" parent="FrontRCS"]
+[node name="node_2 2" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(5.74025, 5.85271, 28.8582)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18037" type="RayCast3D" parent="FrontRCS"]
+[node name="node_2 3" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(4.86635, 16.6671, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="node_3 0" type="RayCast3D" parent="FrontRCS"]
+[node name="@RayCast3D@17597" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(13.8582, -16.6671, 20.7403)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="node_3 1" type="RayCast3D" parent="FrontRCS"]
+[node name="@RayCast3D@17598" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(16.3469, -5.85271, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="node_3 2" type="RayCast3D" parent="FrontRCS"]
+[node name="@RayCast3D@17599" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(16.3469, 5.85271, 24.4648)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="@RayCast3D@18038" type="RayCast3D" parent="FrontRCS"]
+[node name="node_3 3" type="RayCast3D" parent="FrontRCS"]
 target_position = Vector3(13.8582, 16.6671, 20.7403)
 collision_mask = 2
 collide_with_areas = true
@@ -166,11 +151,11 @@ n_rays_width = 2.0
 n_rays_height = 1.0
 ray_length = 20.0
 
-[node name="@RayCast3D@18039" type="RayCast3D" parent="LeftWingRCS"]
+[node name="@RayCast3D@17600" type="RayCast3D" parent="LeftWingRCS"]
 target_position = Vector3(-5.17638, 0, 19.3185)
 collision_mask = 2
 
-[node name="node_1 0" type="RayCast3D" parent="LeftWingRCS"]
+[node name="@RayCast3D@17601" type="RayCast3D" parent="LeftWingRCS"]
 target_position = Vector3(5.17638, 0, 19.3185)
 collision_mask = 2
 
@@ -183,15 +168,24 @@ n_rays_width = 2.0
 n_rays_height = 1.0
 ray_length = 20.0
 
-[node name="@RayCast3D@18040" type="RayCast3D" parent="RightWingRCS"]
+[node name="@RayCast3D@17602" type="RayCast3D" parent="RightWingRCS"]
 target_position = Vector3(-5.17638, 0, 19.3185)
 collision_mask = 2
 
-[node name="@RayCast3D@18041" type="RayCast3D" parent="RightWingRCS"]
+[node name="node_1 0" type="RayCast3D" parent="RightWingRCS"]
 target_position = Vector3(5.17638, 0, 19.3185)
 collision_mask = 2
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 100.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="PlaneCamera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.429558, -4.18261)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20969, 17.2069)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

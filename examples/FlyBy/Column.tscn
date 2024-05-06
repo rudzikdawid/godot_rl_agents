@@ -12,12 +12,14 @@ size = Vector3(10, 100, 52)
 material = SubResource("StandardMaterial3D_ku1r5")
 
 [node name="Area3D" type="Area3D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_h6mm0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
